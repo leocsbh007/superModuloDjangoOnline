@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculo de IMC</title>
+</head>
+<body>
+    <h1>Calculo IMC</h1>
+    <form action="" method="POST">                    
+        {% csrf_token %}
+        <div class="row">                        
+            {% for field in form.visible_fields %}                        
+            <div class="col-12 col-lg-12" style="margin-bottom: 10px;">                            
+                <label for="{{ field.id_for_label }}" style="color:#0c0b0b; margin-bottom: 5px;">{{field.label}}</label>                            
+                {{ field }}
+            </div>                        
+            {% endfor %}
+        </div>    
+        <div class="col-12 text-center">
+            <button class="btn btn-success col-12" style="padding: top 5px;" type="submit">Calcular</button>
+        </div>                
+    </form>
+</body>
+</html>

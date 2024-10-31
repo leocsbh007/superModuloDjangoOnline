@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Cadastro por Formulario</h1>
+
+    <form action="" method="POST">
+        {{ forms.as_p }}
+
+        {% for campo in forms %}
+            {% if campo.errors %}
+            <ul>
+                {% for erro in campo.errors %}
+                <li>
+                    {{ erro }}
+                </li>
+                {% endfor %}             
+
+            </ul>
+            {% endif %}             
+        {% endfor %}             
+        <button type="submit">CADASTRA PRODUTO</button>
+        <button type="reset">LIMPAR</button>
+    </form>
+</body>
+</html>

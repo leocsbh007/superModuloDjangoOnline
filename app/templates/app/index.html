@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Templates</title>
+</head>
+<body>
+    <h1>Lista de produtos</h1>
+    <ul>
+        {% for produto in tupla_de_produtos %}
+            <li>{{produto}}</li>
+        {% endfor %}
+    </ul>
+
+    <h1>Lista de roupas</h1>
+    <ul>
+        {% for roupa in lista_de_roupas %}
+            <li>{{roupa}}</li>
+        {% endfor %}
+    </ul>
+    
+    
+</body>
+</html>

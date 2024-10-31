@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Bem vindo ao e-commerce</h1>
+
+    <p>Veja a lista de produtos abaixo:</p>
+    <a href="{% url "rota_de_cadsastrar_produtos" %}"> Clique Para Cadastrar um produto </a>
+    <br><br>
+    <table border="1px">
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Marca</th>
+            <th>Preco</th>
+            <th>Estoque</th>
+        </tr>
+        
+        
+            {% for produto in produtos %}    
+            <tr>
+            <td>{{produto.id}}</td>
+            <td>{{produto.nome}}</td>
+            <td>{{produto.marca}}</td>
+            <td>{{produto.preco}}</td>
+            <td>{{produto.estoque}}</td>
+            </tr>
+            {% endfor %}
+            
+        
+        
+    </table>
+</body>
+</html>
